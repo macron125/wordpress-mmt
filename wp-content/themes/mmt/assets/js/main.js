@@ -53,6 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let anchor = document.createElement("a");
         let title = header.textContent;
         anchor.id = `${title.replace(/ /g, "").toLowerCase()}`;
+        anchor.classList.add('mmt-blog-anchor');
         anchor.href = `#${title.replace(/ /g, "").toLowerCase()}`;
         anchor.textContent = title;
         header.innerHTML = "";

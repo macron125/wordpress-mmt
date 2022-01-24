@@ -166,10 +166,35 @@ textarea {
   max-width: var(--global-content-width);
 }
 
+.module-blog
+
 .module-vid,
 .module-contact_us {
   width: 100%;
   min-height: 70vh;
+}
+
+.mmt-blog-anchor {
+}
+
+.mmt-blog-anchor::before {
+  content: "\f103";  
+  font-family: 'dashicons';
+  /* change */
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  position: absolute;
+  transform: translateX(-100%);
+  color: rgb(0, 0, 0, 0.3);
+}
+
+.mmt-blog-anchor:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+.mmt-blog-anchor:hover::before {
+  opacity: 1;
 }
 
 .screen-reader-text {
