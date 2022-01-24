@@ -381,7 +381,7 @@ body.open .mmt-ham_btn::before {
     transition: 0.2s ease;
     transform: translateX(100%);
     justify-content: start;
-    align-items: end;
+    align-items: flex-end;
     padding: 100px
       calc(
         (60px - var(--header-hambtn-width)) / 2 +
