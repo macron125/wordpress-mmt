@@ -1,8 +1,9 @@
 <?php
 /**
  * Enqueue jQuery 
+ * Currently not required as everything is written in Vanilla JS
  */
-wp_enqueue_script('jquery');
+// wp_enqueue_script('jquery');
 
 /**
  * Add dynamic title support

@@ -1,37 +1,39 @@
 <section class="module module-contact_us mmt-contact_us">
 
-  <form action="" class="mmt-contact_us-form">
+<?php require_once __DIR__ . '/../assets/form_process.php' ?>
+
+  <form action="" method="post" class="mmt-contact_us-form">
 
     <fieldset class="mmt-contact_us-fieldset">
 
       <div>
         <label for="firstname">First Name</label>
-        <input class="mmt-field-short" type="text" name="firstname" id="firstname" placeholder="First Name" required>
+        <input class="mmt-field-short" type="text" name="firstname" id="firstname" placeholder="First Name" value="" required>
       </div>
 
       <div>
         <label for="lastname">Last Name</label>
-        <input class="mmt-field-short" type="text" name="lastname" id="lastname" placeholder="Last Name" required>
+        <input class="mmt-field-short" type="text" name="lastname" id="lastname" placeholder="Last Name" value="" required>
       </div>
     
     </fieldset>
 
     <div>
       <label for="phone">Phone</label>
-      <input class="mmt-field-long" type="text" name="phone" id="phone" placeholder="Phone" required>
+      <input class="mmt-field-long" type="text" name="phone" id="phone" placeholder="Phone" value="" required>
     </div>
     
     <div>
       <label for="email">E-mail</label>
-      <input class="mmt-field-long" type="text" name="email" id="email" placeholder="E-mail">
+      <input class="mmt-field-long" type="text" name="email" id="email" placeholder="E-mail" value="">
     </div>
     
     <div>
       <label for="message">Message</label>
-      <textarea class="mmt-field-long" name="message" id="message" cols="30" rows="10" placeholder="Message" required></textarea>
+      <textarea class="mmt-field-long" name="message" id="message" cols="30" rows="10" placeholder="Message" value="" required></textarea>
     </div>
 
-    <button type="submit">Submit</button>
+    <input type="submit" name="submit" value="Submit">
 
   </form>
 
