@@ -20,7 +20,6 @@ add_theme_support( 'custom-logo', [] );
 function mmt_register_styles() {
   $version = wp_get_theme()->get('Version');
   wp_enqueue_style('mmt-style', get_stylesheet_uri(), [], $version, 'all');
-  wp_enqueue_style('fontawesome', get_template_directory_uri() . '/assets/fonts/fontawesome/css/all.css', [], '1.0', 'all');
 }
 add_action('wp_enqueue_scripts', 'mmt_register_styles');
 

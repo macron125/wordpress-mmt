@@ -111,13 +111,16 @@ h2 {
   letter-spacing: 0.055em;
 }
 
-p {
+p,
+.module-blog ul,
+.module-blog ol {
   font-family: Helvetica;
   font-weight: 300;
   font-size: 17px;
   line-height: 21px;
   letter-spacing: 0.055em;
   margin: 26px 0;
+  list-style-position: inside;
 }
 
 @media screen and (max-width: 760px) {
