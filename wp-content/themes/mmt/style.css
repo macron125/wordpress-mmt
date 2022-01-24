@@ -576,6 +576,25 @@ button[type="submit"] {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: center;
+}
+
+
+.mmt-footer-contact .mmt-phone::before,
+.mmt-footer-contact .mmt-email::before,
+.mmt-footer-contact .mmt-address::before {
+  font-family: 'Font Awesome\ 5 Free';
+  padding: 0 20px 0 0;
+}
+
+.mmt-footer-contact .mmt-phone::before {
+  content: '\f095';
+}
+.mmt-footer-contact .mmt-email::before {
+  content: '\f0e0';
+}
+.mmt-footer-contact .mmt-address::before {
+  content: '\f124';
 }
 
 @media screen and (max-width: 760px) {
