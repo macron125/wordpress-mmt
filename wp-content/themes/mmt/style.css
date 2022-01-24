@@ -568,6 +568,7 @@ button[type="submit"] {
   font-size: 0.8125rem;
   font-weight: normal;
   margin-top: 13px;
+  display: flex;
 }
 
 .mmt-footer-contact > *:hover {
@@ -582,22 +583,21 @@ button[type="submit"] {
   justify-content: center;
 }
 
-
 .mmt-footer-contact .mmt-phone::before,
 .mmt-footer-contact .mmt-email::before,
 .mmt-footer-contact .mmt-address::before {
-  font-family: 'Font Awesome\ 5 Free';
+  font-family: 'dashicons';
   padding: 0 20px 0 0;
 }
 
 .mmt-footer-contact .mmt-phone::before {
-  content: '\f095';
+  content: '\f525';
 }
 .mmt-footer-contact .mmt-email::before {
-  content: '\f0e0';
+  content: '\f465';
 }
 .mmt-footer-contact .mmt-address::before {
-  content: '\f124';
+  content: "\f230";
 }
 
 @media screen and (max-width: 760px) {

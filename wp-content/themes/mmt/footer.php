@@ -1,5 +1,5 @@
 <a href="#" class="mmt-btt-container">
-  <i class="fas fa-arrow-up"></i>
+  <span class="dashicons dashicons-arrow-up-alt"></span>
 </a>
 <footer class="mmt-footer" id="footer">
   <div class="mmt-footer-wrapper">

@@ -15,6 +15,15 @@ add_theme_support('title-tag');
 add_theme_support( 'custom-logo', [] );
 
 /**
+ * Enqueue Dashicons
+ */
+
+function mmt_enqueue_dashicons() {
+   wp_enqueue_style('dashicons');
+}
+add_action('wp_enqueue_scripts', 'mmt_enqueue_dashicons');
+
+/**
  * Register styles
  */
 function mmt_register_styles() {
