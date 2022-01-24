@@ -12,5 +12,5 @@ if(isset($_POST['submit'])) {
   $headers = "From: " . $email;
   $txt = "You have received an email from " . $name . "\n\n" . $message;
 
-  mail($mailto, $subject, $txt, $headers);
+  mail($mailto, 'Contact Form' . $firstname . $lastname, $txt, $headers);
 }
