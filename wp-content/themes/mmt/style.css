@@ -287,6 +287,10 @@ textarea {
   z-index: 99999;
 }
 /* 4.2.2 Global Navigation */
+
+.menu-main-menu-container {
+  margin-left: auto;
+}
 .mmt-gn-list {
   display: flex;
   place-content: center;
