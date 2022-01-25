@@ -30,10 +30,7 @@
     </div>
   </div>
 </footer>
-<div class="developedBy" id="developedBy"
-  style=" display: flex;align-items: center; justify-content: center ;font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: 9px; height: 44px; background-color: #1A1A1A; color: white; letter-spacing: 0.1em; white-space: pre-wrap">
-  2022 Designed and Developed by <a style="font-weight: 700; color: white; letter-spacing: 0.1em;"
-    href="https://georgeparesishvili.com" target="_blank">George&nbsp;Paresishvili</a></div>
+<div class="developedBy" id="developedBy" style="width:100%;text-align:center;font-family:'montserrat';font-size:10px;background-color:#0E0E10;color:#fff;padding:10px 0;">Designed and developed by <a href="https://georgeparesishvili.com/" style="color:#fff"><b>George&nbsp;Paresishvili</b></a></div>
 <?php wp_footer(); ?>
 </body>
 
