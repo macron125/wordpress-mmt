@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+  // Check current page and add "active" class
   let gnItems = document.querySelectorAll(".mmt-gn-list-item a");
   for (let gnItem of gnItems) {
     gnItem.href == window.location.href ? gnItem.classList.add("active") : "";
@@ -80,16 +82,25 @@ document.addEventListener("DOMContentLoaded", () => {
   );
   generatePageNav.launch();
 
-  let btt = document.querySelector(".mmt-btt-container");
+  class BackToTop {
+    constructor(button) {
+      this.btt = button;
+    }
 
-  if (
-    document.documentElement.clientHeight * 2 <
-    document.documentElement.scrollHeight
-  ) {
-    window.addEventListener("scroll", () => {
-      window.scrollY >= document.documentElement.clientHeight * 2
-        ? btt.classList.add("visible")
-        : btt.classList.remove("visible");
-    });
+    launch() {
+      if (
+        document.documentElement.clientHeight * 2 <
+        document.documentElement.scrollHeight
+      ) {
+        window.addEventListener("scroll", () => {
+          window.scrollY >= document.documentElement.clientHeight * 2
+            ? this.btt.classList.add("visible")
+            : this.btt.classList.remove("visible");
+        });
+      }
+    }
   }
+
+  let backToTop = new BackToTop('')
+  backToTop.launch();
 });
