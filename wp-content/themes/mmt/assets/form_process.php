@@ -9,26 +9,22 @@ if(isset($_POST["submit"])) {
   $mailto = "g.paresishvili@outlook.com";
   $subject = "MMT Hospital Form - " . $firstname . " " . $lastname;
 
-  $message = 
-    "First name: " . $firstname . "\r\n" .
-    "Last name : " . $lastname . "\r\n" . 
-    "Phone number: " . $phone . "\r\n" . 
-    "Email: " . $email . "\r\n\r\n" . 
-    $_POST["message"];
-
+  $message = "First name: " . $firstname . "\r\n";
+  $message .= "Last name : " . $lastname . "\r\n";
+  $message .= "Phone number: " . $phone . "\r\n";
+  $message .= "Email: " . $email . "\r\n\r\n";
+  $message .= $_POST["message"];
   $message = wordwrap($message, 70, "\r\n");
 
   $headers = [
     "From" => $mailto,
     "Reply-To" => $mailto,
     "X-Mailer" => "PHP/" . phpversion(),
-    "CC" => 'pgiusha@gmail.com',
-    // "BCC" => "BCC@MAIL.com",
+    // "CC" => 'pgiusha@gmail.com',
     "X-Sender" => $mailto,
-    // "X-Priority" => 1,
     "Return-Path" => $mailto,
     "MIME-Version" => "1.0",
-    "Content-Type" => "text/html; charset=iso-8859-1",
+    "Content-Type" => "text/plain; charset=iso-8859-1", // Set on plain for the simplicity. Can be edited in HTML in the future
   ];
 
   mail(
@@ -38,20 +34,3 @@ if(isset($_POST["submit"])) {
     $headers
   );
 }
-
-
-
-
-
-
-
-
-
-
-// $message = "First name: " . $firstname . "\r\n";
-// $message .= "Last name: " . $lastname . "\r\n";
-// $message .= "Phone number: " . $phone . "\r\n";
-// if($email) {
-//   $message .= "\r\n Email: " . $email . "\r\n";
-// }
-// $message .= wordwrap($_POST["message"], 70, "\r\n");
