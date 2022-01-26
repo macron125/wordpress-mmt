@@ -609,6 +609,7 @@ input[type="submit"]:hover {
 
 @media screen and (max-width: 1060px) {
   .mmt-news-card-module {
+    max-width: unset;
     width: auto;
     padding: var(--global-padding);
     grid-template-columns: 1fr;
