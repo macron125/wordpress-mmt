@@ -7,20 +7,20 @@
     <fieldset class="mmt-contact_us-fieldset">
 
       <div>
-        <label for="firstname">First Name</label>
+        <label for="firstname">First Name (required)</label>
         <input class="mmt-field-short" type="text" name="firstname" id="firstname" placeholder="First Name" value="" required>
       </div>
 
       <div>
-        <label for="lastname">Last Name</label>
+        <label for="lastname">Last Name (required)</label>
         <input class="mmt-field-short" type="text" name="lastname" id="lastname" placeholder="Last Name" value="" required>
       </div>
     
     </fieldset>
 
     <div>
-      <label for="phone">Phone</label>
-      <input class="mmt-field-long" type="text" name="phone" id="phone" placeholder="Phone" value="" required>
+      <label for="phone">Phone (required)</label>
+      <input class="mmt-field-long" type="tel" name="phone" id="phone" placeholder="Phone (numbers only)" pattern="[0-9 ]+" title="Use spaces and numbers only" value="" required>
     </div>
     
     <div>
@@ -29,7 +29,7 @@
     </div>
     
     <div>
-      <label for="message">Message</label>
+      <label for="message">Message (required)</label>
       <textarea class="mmt-field-long" name="message" id="message" cols="30" rows="10" placeholder="Message" value="" required></textarea>
     </div>
 

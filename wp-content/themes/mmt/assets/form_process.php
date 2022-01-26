@@ -27,10 +27,8 @@ if(isset($_POST["submit"])) {
     "Content-Type" => "text/plain; charset=iso-8859-1", // Set on plain for the simplicity. Can be edited in HTML in the future
   ];
 
-  mail(
-    $mailto,
-    $subject,
-    $message,
-    $headers
-  );
+  if( mail( $mailto, $subject, $message, $headers ) ) {
+    
+  }
+
 }
