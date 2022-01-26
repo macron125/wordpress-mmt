@@ -62,3 +62,8 @@ function mmt_nav_add_li_classes($classes, $item, $args) {
   return $classes;
 }
 add_filter('nav_menu_css_class', 'mmt_nav_add_li_classes', 1, 3);
+
+function mmt_excerpt_length( $legnth ) {
+  return 20;
+}
+add_filter( 'excerpt_length', 'mmt_excerpt_length', 999 );

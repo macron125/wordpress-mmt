@@ -597,6 +597,65 @@ input[type="submit"]:hover {
   }
 }
 
+
+/* Module - Font Page News Box */
+
+.mmt-news-card-module {
+  max-width: var(--global-content-width);
+  width: var(--global-content-width);
+  margin: 100px auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.mmt-news-card {
+  min-height: 150px;
+  min-width: 480px;
+  border: 1px solid rgba(211, 211, 211, 0.62);
+  position: relative;
+}
+
+.mmt-news-card-category {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  height: 35px;
+  min-width: 192px;
+  background-color: var(--global-red);
+  color: var(--global-white);
+  padding: 0 20px;
+  font-size: 16px;
+  letter-spacing: 0.1rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.mmt-news-card-category a {
+  color: var(--global-white);
+}
+
+.mmt-news-card-content {
+  padding: 30px 31px;
+}
+
+.mmt-news-card-headline {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.mmt-news-card-headline a {
+  color: var(--global-red);
+}
+
+.mmt-news-card-text p {
+  font-size: 14px;
+  color: var(--global-black);
+}
+
 /* Page Navigation */
 
 .mmt-page-nav {
