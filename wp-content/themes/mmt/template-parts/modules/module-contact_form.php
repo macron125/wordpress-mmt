@@ -1,6 +1,6 @@
 <section class="module module-contact_us mmt-contact_us">
 
-<?php require_once __DIR__ . '/../assets/form_process.php' ?>
+<?php require_once __DIR__ . '/../../assets/form_process.php' ?>
 
   <form action="" method="post" class="mmt-contact_us-form">
 

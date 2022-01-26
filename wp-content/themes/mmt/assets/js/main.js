@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-
   // Check current page and add "active" class
   let gnItems = document.querySelectorAll(".mmt-gn-list-item a");
   for (let gnItem of gnItems) {
@@ -55,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let anchor = document.createElement("a");
         let title = header.textContent;
         anchor.id = `${title.replace(/ /g, "").toLowerCase()}`;
-        anchor.classList.add('mmt-blog-anchor');
+        anchor.classList.add("mmt-blog-anchor");
         anchor.href = `#${title.replace(/ /g, "").toLowerCase()}`;
         anchor.textContent = title;
         header.innerHTML = "";
@@ -101,6 +100,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  let backToTop = new BackToTop('')
+  let backToTop = new BackToTop(document.querySelector(".mmt-btt-container"));
   backToTop.launch();
 });
