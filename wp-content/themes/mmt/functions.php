@@ -37,7 +37,7 @@ add_action('wp_enqueue_scripts', 'mmt_register_styles');
  * Register scripts
  */
 function mmt_register_scripts() {
-  $version = '1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.3';
+  $version = '1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1';
   wp_enqueue_script('mmt-script', get_template_directory_uri() . '/assets/js/main.js', array(), $version, true);
 }
 add_action('wp_enqueue_scripts', 'mmt_register_scripts');

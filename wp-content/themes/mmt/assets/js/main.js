@@ -70,7 +70,10 @@ document.addEventListener("DOMContentLoaded", () => {
         let pageNavLi = document.createElement("li");
         pageNavLi.className = "mmt-page-nav-list-item";
         pageNavLi.append(anchor);
-        this.navList.append(pageNavLi);
+        // Check if the navigation section is appended
+        if(this.navList != null) {
+          this.navList.append(pageNavLi);
+        }
       }
     }
   }
