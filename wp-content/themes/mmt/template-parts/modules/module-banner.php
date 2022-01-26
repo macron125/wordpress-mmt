@@ -22,7 +22,7 @@
       </div>
     </section>
   <?php endif; ?>
-<?php if( !is_page( [ 'book-a-visit', 'privacy-policy', ] && !is_front_page() ) ) :?>
+<?php if( !is_page( [ 'book-a-visit', 'privacy-policy', ] ) && !is_front_page() && !is_single() ) :?>
   <nav class="mmt-page-nav">
     <ul class="mmt-page-nav-list">
       <?php // Menu goes here main.js ?>
