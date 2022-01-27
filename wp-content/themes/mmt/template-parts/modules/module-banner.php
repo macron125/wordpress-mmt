@@ -29,7 +29,9 @@ if( is_home() ) {
   <div class="mmt-hero-headline-container">
     <h1 class="mmt-hero-banner-headline">MMT Hospital</h1>
     <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, odit.</h2>
-    <a class="mmt-hero-headline-button" href="<?php echo esc_url( get_permalink( get_page_by_title( 'Book a Visit' ) ) ); ?>">Book A Visit</a>
+    <div class="mmt-hero-headline-button-container">
+      <a class="mmt-hero-headline-button" href="<?php echo esc_url( get_permalink( get_page_by_title( 'Book a Visit' ) ) ); ?>">Book A Visit</a>
+    </div>
   </div>
 </section>
 <?php else : ?>

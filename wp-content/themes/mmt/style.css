@@ -214,6 +214,12 @@ textarea {
   color: var(--global-white);
 }
 
+@media screen and (max-width: 760px) {
+  .module-headline {
+    padding: var(--global-padding);
+  }
+}
+
 /* .mmt-blog-anchor {
 } */
 
@@ -531,7 +537,6 @@ body.open .mmt-ham_btn::before {
 /* Video Module */
 
 .module-vid video {
-  width: 100%;
   max-height: calc(var(--banner-height) * 2);
   object-fit: cover;
   vertical-align: top;
@@ -555,6 +560,7 @@ body.open .mmt-ham_btn::before {
   color: var(--global-white);
   font-family: montserrat;
   font-weight: normal;
+  padding: var(--global-padding);
   margin: 30px 0;
 }
 
@@ -578,6 +584,16 @@ body.open .mmt-ham_btn::before {
 }
 .module-vid .mmt-hero-headline-button:hover {
   color: var(--global-red);
+}
+
+@media screen and (max-width: 760px) {
+  .module-vid .mmt-hero-headline-container h2 {
+    font-size: 1.1rem;
+  }
+  
+  .module-vid .mmt-hero-headline-button-container {
+    padding: var(--global-padding);
+  }
 }
 
 /* Contact Form */
