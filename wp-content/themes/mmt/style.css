@@ -535,6 +535,9 @@ input[name="lastname"],
 input[name="email"],
 input[name="phone"],
 textarea[name="message"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   width: 100%;
   height: 48px;
   background: #fdfdfd;

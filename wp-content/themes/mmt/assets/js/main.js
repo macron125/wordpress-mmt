@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
         pageNavLi.className = "mmt-page-nav-list-item";
         pageNavLi.append(anchor);
         // Check if the navigation section is appended
-        if(this.navList != null) {
+        if (this.navList != null) {
           this.navList.append(pageNavLi);
         }
       }
@@ -100,6 +100,13 @@ document.addEventListener("DOMContentLoaded", () => {
             : this.btt.classList.remove("visible");
         });
       }
+
+      this.btt.addEventListener("click", () => {
+        window.scrollTo({ 
+          top: 0, 
+          behavior: "smooth" 
+        });
+      });
     }
   }
 
