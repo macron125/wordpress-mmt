@@ -4,7 +4,7 @@
  Description:  The main theme for MMT Hospitals
  Author:       George Paresishvili
  Author URI:   https://georgeparesishvili.com/
- Version:      1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1
+ Version:      1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.2
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain:  mmt-hospital
@@ -109,24 +109,16 @@ ul {
   list-style-type: none;
 }
 
+ol {
+  list-style-type: upper-roman;
+}
+
 h2 {
   font-family: Helvetica;
   font-weight: bold;
   font-size: 24px;
   margin: 60px 0 20px 0;
   letter-spacing: 0.055em;
-}
-
-p,
-.module-blog ul,
-.module-blog ol {
-  font-family: Helvetica;
-  font-weight: 300;
-  font-size: 17px;
-  line-height: 21px;
-  letter-spacing: 0.055em;
-  margin: 26px 0;
-  list-style-position: inside;
 }
 
 fieldset {
@@ -171,8 +163,6 @@ textarea {
   min-height: 70vh;
   max-width: var(--global-content-width);
 }
-
-.module-blog
 
 .module-vid,
 .module-contact_us {
@@ -530,7 +520,7 @@ body.open .mmt-ham_btn::before {
 	border: 1px solid var(--global-red);
 }
 
-input, button {
+input, button, textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -671,6 +661,46 @@ input[type="submit"]:hover {
   .mmt-news-card {
     min-width: unset;
   }
+}
+
+/* Blog Module -- Article */
+
+.mmt-article-data {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(207, 207, 207, 0.404);
+  padding-bottom: 14px;
+  margin-top: 20px;
+}
+
+.mmt-article-data li {
+  font-size: 0.75rem;
+  font-family: 'montserrat';
+}
+
+.mmt-article-data-category .post-categories {
+  font-weight: 700;
+  color: #565656;
+}
+.mmt-article-data-date {
+  color: rgba(0, 0, 0, 0.46);
+}
+
+p,
+.mmt-article-content ul,
+.mmt-article-content ol {
+  font-family: Helvetica;
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 21px;
+  letter-spacing: 0.055em;
+  margin: 26px 0;
+  list-style-position: inside;
+}
+
+.mmt-article-content ul {
+  list-style-type: disc;
 }
 
 /* Page Navigation */
