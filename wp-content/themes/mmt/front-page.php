@@ -8,12 +8,12 @@ if( is_front_page() ) {
   // Get banner
   get_template_part( 'template-parts/modules/module', 'banner' );
 
-  echo "<h2>Featured News</h2>";
+  get_template_part( 'template-parts/modules/module', 'headline', ['headline' => 'Featured News', 'width' => 'long']);
 
   $mmt_news = new WP_Query;
   $mmt_news_cats = get_categories();
 
-  echo '<section class="module mmt-news-card-module cols-two">';
+  echo '<section class="module module-long mmt-news-card-module cols-two">';
 
   foreach( $mmt_news_cats as $news_cat ) {
 

@@ -25,6 +25,12 @@ if( is_home() ) {
     <source src="<?php echo esc_url( get_post_custom_values( 'hero_video', is_home() ? $news_page_id : '' )[0] ); ?>" type="video/mp4">
     Sorry, your browser doesn't support embedded videos.
   </video>
+  <div class="mmt-hero-banner-overlay"></div>
+  <div class="mmt-hero-headline-container">
+    <h1 class="mmt-hero-banner-headline">MMT Hospital</h1>
+    <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, odit.</h2>
+    <a class="mmt-hero-headline-button" href="<?php echo esc_url( get_permalink( get_page_by_title( 'Book a Visit' ) ) ); ?>">Book A Visit</a>
+  </div>
 </section>
 <?php else : ?>
 <section class="module module-hero mmt-hero-banner">

@@ -4,7 +4,7 @@
  Description:  The main theme for MMT Hospitals
  Author:       George Paresishvili
  Author URI:   https://georgeparesishvili.com/
- Version:      1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.2
+ Version:      1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.4
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain:  mmt-hospital
@@ -48,7 +48,7 @@ Table of Contents
   --global-white-transparent: rgba(255, 255, 255, 0.5);
   --global-padding: 0 40px;
   --global-content-width: 980px;
-  --global-content-width-logner:1060px;
+  --global-content-width-logner:1260px;
   --global-linear-gradient-horizontal: linear-gradient(
     90deg,
     rgba(235, 29, 37, 0.86) 22.31%,
@@ -159,6 +159,16 @@ textarea {
 
 /* 3.0.0 Reusables */
 
+.module-short {
+  max-width: var(--global-content-width);
+  width: var(--global-content-width);
+}
+
+.module-long {
+  max-width: var(--global-content-width-logner);
+  width: var(--global-content-width-longer);
+}
+
 .module-blog {
   margin: 0 auto;
   min-height: 70vh;
@@ -168,7 +178,13 @@ textarea {
 .module-vid,
 .module-contact_us {
   width: 100%;
-  min-height: 70vh;
+  min-height: calc(var(--banner-height) * 2);
+}
+
+.module-vid {
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 
 .noborder {
@@ -183,7 +199,7 @@ textarea {
 
 .ribbon {
   height: 35px;
-  min-width: 192px;
+  min-width: 150px;
   background-color: var(--global-red);
   padding: 0 20px;
   font-size: 16px;
@@ -506,12 +522,62 @@ body.open .mmt-ham_btn::before {
   } */
 }
 
+/* Headline Module */
+
+.module-headline {
+  margin: 0 auto;
+}
+
 /* Video Module */
 
 .module-vid video {
   width: 100%;
-  max-height: 70vh;
+  max-height: calc(var(--banner-height) * 2);
   object-fit: cover;
+  vertical-align: top;
+}
+
+.module-vid .mmt-hero-banner-overlay {
+  background: linear-gradient( 90deg, rgba(235, 29, 37, 0.95) 35%, rgba(235, 29, 37, 0.01) 100% );
+  top: 0;
+}
+
+.module-vid .mmt-hero-headline-container {
+  max-width: 1250px;
+  height: 200px;
+}
+
+.module-vid .mmt-hero-banner-headline {
+  font-weight: bold;
+}
+
+.module-vid .mmt-hero-headline-container h2 {
+  color: var(--global-white);
+  font-family: montserrat;
+  font-weight: normal;
+  margin: 30px 0;
+}
+
+.module-vid .mmt-hero-headline-button {
+  color: rgba(0, 0, 0, 0.9);
+  padding: 10px 20px 10px 40px;
+  background-color: var(--global-white);
+  border-radius: 2px;
+  font-weight: bold;
+  font-family: montserrat;
+  transition: 0.15s ease-out;
+}
+
+.module-vid .mmt-hero-headline-button::after {
+  content: "\f345";
+  font-family: dashicons;
+  font-size: 1.5em;
+  padding-left: 20px;
+  color: var(--global-red);
+  vertical-align: middle;
+}
+.module-vid .mmt-hero-headline-button:hover {
+  color: var(--global-red);
 }
 
 /* Contact Form */
@@ -627,9 +693,8 @@ input[type="submit"]:hover {
 /* Module - Font Page News Box */
 
 .mmt-news-card-module {
-  max-width: 1250px;
   width: 100%;
-  margin: 100px auto;
+  margin: 20px auto;
   display: grid;
   gap: 20px;
 }

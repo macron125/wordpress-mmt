@@ -2,14 +2,15 @@
 
 get_header();
 
+echo '<main class="mmt-blog">';
+
 if ( is_home() ) {
 
   get_template_part( 'template-parts/modules/module', 'banner' );
 
+  get_template_part( 'template-parts/modules/module', 'headline', ['headline' => 'News Releases', 'width' => 'short']);
 
   echo '<section class="module mmt-news-card-module mmt-news-list cols-one">';
-
-  echo '<h2>News Releases</h2>';
 
   if( have_posts() ) {
 
@@ -34,5 +35,7 @@ the_posts_pagination(
     'end_size'           => 1,
   ]
 );
+
+echo '</main>';
 
 get_footer();
