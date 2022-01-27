@@ -530,14 +530,17 @@ body.open .mmt-ham_btn::before {
 	border: 1px solid var(--global-red);
 }
 
+input, button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 input[name="firstname"],
 input[name="lastname"],
 input[name="email"],
 input[name="phone"],
 textarea[name="message"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
   width: 100%;
   height: 48px;
   background: #fdfdfd;
