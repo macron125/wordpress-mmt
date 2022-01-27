@@ -1,3 +1,8 @@
+# AuthType Basic
+# AuthName "restricted area"
+# AuthUserFile .htpasswd
+# require valid-user
+
 # BEGIN LSCACHE
 ## LITESPEED WP CACHE PLUGIN - Do not edit the contents of this block! ##
 <IfModule LiteSpeed>

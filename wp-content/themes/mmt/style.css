@@ -48,6 +48,7 @@ Table of Contents
   --global-white-transparent: rgba(255, 255, 255, 0.5);
   --global-padding: 0 40px;
   --global-content-width: 980px;
+  --global-content-width-logner:1060px;
   --global-linear-gradient-horizontal: linear-gradient(
     90deg,
     rgba(235, 29, 37, 0.86) 22.31%,
@@ -489,11 +490,15 @@ body.open .mmt-ham_btn::before {
   font-weight: normal;
 }
 
+@media screen and (max-width: 1060px) {
+  .mmt-hero-banner-headline {
+    padding: var(--global-padding);
+  }
+}
+
 @media screen and (max-width: 760px) {
   .mmt-hero-banner-headline {
-    /* text-align: center; */
-    padding: var(--global-padding);
-    font-size: 1.7rem;
+    font-size: 1.2rem;
   }
 
   /* .mmt-hero-banner-overlay {
@@ -622,8 +627,8 @@ input[type="submit"]:hover {
 /* Module - Font Page News Box */
 
 .mmt-news-card-module {
-  max-width: var(--global-content-width);
-  width: var(--global-content-width);
+  max-width: 1250px;
+  width: 100%;
   margin: 100px auto;
   display: grid;
   gap: 20px;
@@ -631,6 +636,7 @@ input[type="submit"]:hover {
 
 .mmt-news-list {
   margin-top: 0;
+  max-width: var(--global-content-width)
 }
 
 .mmt-news-list .mmt-news-card-content {
@@ -645,12 +651,12 @@ input[type="submit"]:hover {
   grid-template-columns: repeat(1, 1fr);
 }
 .mmt-news-card-module.cols-two {
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .mmt-news-card {
   min-height: 150px;
-  min-width: 480px;
+  min-width: 350px;
   border: 1px solid rgba(211, 211, 211, 0.62);
   position: relative;
 }
@@ -658,23 +664,6 @@ input[type="submit"]:hover {
 .mmt-news-card .mmt-article-data {
   padding: 0 !important;
 }
-
-/* .mmt-news-card-category {
-  position: absolute;
-  top: 10px;
-  right: 0;
-  height: 35px;
-  min-width: 192px;
-  background-color: var(--global-red);
-  color: var(--global-white);
-  padding: 0 20px;
-  font-size: 16px;
-  letter-spacing: 0.1rem;
-  font-weight: bold;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-} */
 
 .mmt-news-card-module .mmt-article-data-date {
   padding-left: 31px;
@@ -699,11 +688,23 @@ input[type="submit"]:hover {
   color: var(--global-black);
 }
 
+@media screen and (max-width: 1260px) {
+  .mmt-news-card-module {
+    padding: var(--global-padding);
+  }
+  .mmt-news-card-module.cols-two {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media screen and (max-width: 1060px) {
   .mmt-news-card-module {
     max-width: unset;
     width: auto;
-    padding: var(--global-padding);
+    grid-template-columns: 1fr;
+  }
+
+  .mmt-news-card-module.cols-two {
     grid-template-columns: 1fr;
   }
 

@@ -8,6 +8,8 @@ if( is_front_page() ) {
   // Get banner
   get_template_part( 'template-parts/modules/module', 'banner' );
 
+  echo "<h2>Featured News</h2>";
+
   $mmt_news = new WP_Query;
   $mmt_news_cats = get_categories();
 
