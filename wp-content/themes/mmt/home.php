@@ -6,14 +6,21 @@ if ( is_home() ) {
 
   get_template_part( 'template-parts/modules/module', 'banner' );
 
+
+  echo '<section class="module mmt-news-card-module mmt-news-list cols-one">';
+
+  echo '<h2>News Releases</h2>';
+
   if( have_posts() ) {
 
     while( have_posts() ) {
       the_post();
-      the_title();
-      the_excerpt();
+      get_template_part( 'template-parts/modules/module', 'card');
     }
   }  
+  
+  echo '</section>';
+
 }
 
 

@@ -11,7 +11,7 @@ if( is_front_page() ) {
   $mmt_news = new WP_Query;
   $mmt_news_cats = get_categories();
 
-  echo '<section class="module mmt-news-card-module">';
+  echo '<section class="module mmt-news-card-module cols-two">';
 
   foreach( $mmt_news_cats as $news_cat ) {
 
