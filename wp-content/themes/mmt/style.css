@@ -633,6 +633,14 @@ input[type="submit"]:hover {
   margin-top: 0;
 }
 
+.mmt-news-list .mmt-news-card-content {
+  padding: 20px 0;
+}
+
+.mmt-news-list .mmt-article-data-date {
+  padding-left: 0px !important;
+}
+
 .mmt-news-card-module.cols-one {
   grid-template-columns: repeat(1, 1fr);
 }
@@ -645,6 +653,10 @@ input[type="submit"]:hover {
   min-width: 480px;
   border: 1px solid rgba(211, 211, 211, 0.62);
   position: relative;
+}
+
+.mmt-news-card .mmt-article-data {
+  padding: 0 !important;
 }
 
 /* .mmt-news-card-category {
@@ -708,6 +720,7 @@ input[type="submit"]:hover {
   justify-content: space-between;
   border-bottom: 1px solid rgba(207, 207, 207, 0.404);
   margin-top: 20px;
+  padding-bottom: 15px;
 }
 
 .mmt-article-data li {
