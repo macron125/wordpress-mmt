@@ -54,6 +54,7 @@ Table of Contents
     rgba(235, 29, 37, 0.86) 22.31%,
     rgba(235, 29, 37, 0.01) 100%
   );
+  --global-background-small-screen: rgba(235, 29, 36, 0.507);
   --global-linear-gradient-vertical: linear-gradient(
     0deg,
     rgba(235, 29, 37, 0.86) 22.31%,
@@ -139,7 +140,7 @@ textarea {
   :root {
     --global-linear-gradient-horizontal: linear-gradient(
       90deg,
-      rgba(235, 29, 37, 0.86) 40%,
+      rgba(235, 29, 37, 0.86) 50%,
       rgba(235, 29, 37, 0.01) 100%
     );
   }
