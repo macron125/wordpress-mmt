@@ -4,13 +4,11 @@
  Description:  The main theme for MMT Hospitals
  Author:       George Paresishvili
  Author URI:   https://georgeparesishvili.com/
- Version:      1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.4
+ Version:      1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.7
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain:  mmt-hospital
 */
-
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 
 /*
 
@@ -33,6 +31,9 @@ Table of Contents
 */
 
 /* 1.0.0 Fonts */
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
 /* 2.0.0 Global */
 
 :root {
@@ -67,6 +68,7 @@ Table of Contents
   --banner-height: 250px;
 }
 
+
 * {
   margin: 0;
   padding: 0;
@@ -78,9 +80,19 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Disable Scrollbars */
+::-webkit-scrollbar {
+  display: none;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}
+
 body {
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
+  -ms-overflow-style: none;
 }
 
 main {
@@ -136,6 +148,18 @@ textarea {
   font-family: inherit;
 }
 
+@media screen and (max-width: 1260px) {
+  :root {
+    --global-content-width-longer: 100%;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  :root {
+    --global-content-width: 100%;
+  }
+}
+
 @media screen and (max-width: 760px) {
   :root {
     --global-linear-gradient-horizontal: linear-gradient(
@@ -161,13 +185,13 @@ textarea {
 /* 3.0.0 Reusables */
 
 .module-short {
-  max-width: var(--global-content-width);
-  width: var(--global-content-width);
+  max-width: var(--global-content-width) !important;
+  width: var(--global-content-width) !important;
 }
 
 .module-long {
-  max-width: var(--global-content-width-logner);
-  width: var(--global-content-width-longer);
+  max-width: var(--global-content-width-logner) !important;
+  width: var(--global-content-width-longer) !important;
 }
 
 .module-blog {
@@ -218,19 +242,9 @@ textarea {
   color: var(--global-white);
 }
 
-@media screen and (max-width: 1060px) {
-  .module-headline {
-    padding: var(--global-padding);
-  }
-}
-
-/* .mmt-blog-anchor {
-} */
-
 .mmt-blog-anchor::before {
   content: "\f103";  
   font-family: 'dashicons';
-  /* change */
   opacity: 0;
   transition: opacity 0.2s ease;
   position: absolute;
@@ -260,10 +274,32 @@ textarea {
   word-wrap: normal !important;
 }
 
+@media screen and (max-width: 1260px) {
+  .module-long {
+    padding: var(--global-padding) !important;
+  }
+}
+
 @media screen and (max-width: 1060px) {
-  .module-blog {
+  .module-blog,
+  .module-headline,
+  .mmt-news-card-module {
     padding: var(--global-padding);
   }
+
+  .mmt-news-card-module {
+    max-width: unset;
+    width: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .cols-two {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media screen and (max-width: 980px) {
+
 }
 
 /* 4.0.0 Header */
@@ -301,6 +337,9 @@ textarea {
   margin-left: var(--header-basic-margin-left);
 }
 /* 4.1.2 Languages */
+.header-cntnt-basic-lang {
+  display: flex;
+}
 .header-cntnt-basic-lang > * {
   margin-left: var(--header-basic-margin-left);
 }
@@ -553,7 +592,6 @@ body.open .mmt-ham_btn::before {
 }
 
 .module-vid .mmt-hero-headline-container {
-  max-width: 1250px;
   height: 200px;
 }
 
@@ -593,6 +631,9 @@ body.open .mmt-ham_btn::before {
 @media screen and (max-width: 1060px) {
   .module-vid .mmt-hero-headline-container h2,
   .module-vid .mmt-hero-headline-button-container{
+    padding: var(--global-padding);
+  }
+  .mmt-news-card-module {
     padding: var(--global-padding);
   }
 }
@@ -777,25 +818,13 @@ input[type="submit"]:hover {
 }
 
 @media screen and (max-width: 1260px) {
-  .mmt-news-card-module {
-    padding: var(--global-padding);
-  }
+
   .mmt-news-card-module.cols-two {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media screen and (max-width: 1060px) {
-  .mmt-news-card-module {
-    max-width: unset;
-    width: auto;
-    grid-template-columns: 1fr;
-  }
-
-  .mmt-news-card-module.cols-two {
-    grid-template-columns: 1fr;
-  }
-
   .mmt-news-card {
     min-width: unset;
   }
@@ -1007,4 +1036,21 @@ p,
   transform: translateY(0);
   visibility: visible;
   opacity: 1;
+}
+
+.mmt-bav-container {
+  position: fixed;
+  bottom: 44px;
+  left: 20px;
+  height: 40px;
+  width: 40px;
+  background-color: var(--global-red);
+  border-radius: 50%;
+  transition: 0.2s cubic-bezier(0.79, 0.14, 0.15, 0.86);
+  visibility: visible;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
 }

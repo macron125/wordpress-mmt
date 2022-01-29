@@ -1,6 +1,9 @@
 <a href="#" class="mmt-btt-container">
   <span class="dashicons dashicons-arrow-up-alt"></span>
 </a>
+<a href="<?php echo esc_url( get_permalink( get_page_by_title( 'book a visit' ) ) ); ?>" class="mmt-bav-container">
+  <span class="dashicons dashicons-email-alt"></span>
+</a>
 <footer class="mmt-footer" id="footer">
   <div class="mmt-footer-wrapper">
     <nav class="mmt-footer-sitemap">
@@ -23,9 +26,9 @@
       <img class="mmt-footer-logo"
         src="<?php echo esc_url( wp_get_attachment_url( get_theme_mod( 'custom_logo' ) ) ); ?>" alt="MMT Hospital Logo">
       <address class="mmt-footer-contact">
-        <a class="mmt-phone" href="tel:+995599999999">+995 599 99 99 99</a>
-        <a class="mmt-email" href="mailto:mmt@mmthospital.com">mmt@mmthospital.com</a>
-        <span class="mmt-address">5 Lubliana Str, Tbilisi, Georgia</span>
+        <a class="mmt-phone" href="tel:<?php echo get_theme_mod('mmt-contact-info-phone'); ?>"><?php echo get_theme_mod('mmt-contact-info-phone'); ?></a>
+        <a class="mmt-email" href="mailto:<?php echo get_theme_mod('mmt-contact-info-email'); ?>"><?php echo get_theme_mod('mmt-contact-info-email'); ?></a>
+        <span class="mmt-address"><?php echo get_theme_mod('mmt-contact-info-address'); ?></span>
       </address>
     </div>
   </div>

@@ -43,6 +43,11 @@ function mmt_register_scripts() {
 add_action('wp_enqueue_scripts', 'mmt_register_scripts');
 
 /**
+ * Disable Gutenberg
+ */
+add_filter('use_block_editor_for_post', '__return_false', 10);
+
+/**
  * Register navigation manus
  */
 function mmt_register_menu() {
@@ -67,3 +72,103 @@ function mmt_excerpt_length( $legnth ) {
   return 20;
 }
 add_filter( 'excerpt_length', 'mmt_excerpt_length', 999 );
+
+// Add Contact Info callout section to admin appearance customize interface
+function mmt_contact_info_callout($wp_customize) {
+  $wp_customize->add_section('mmt-contact-info-section', array(
+    'title' => "Contact Info"
+  ));
+
+  // Phone
+  $wp_customize->add_setting('mmt-contact-info-phone');
+  $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'mmt-contact-info-phone-control', array(
+    'label' => 'Phone',
+    'section' => 'mmt-contact-info-section',
+    'settings' => 'mmt-contact-info-phone',
+  )));
+
+  // Email
+  $wp_customize->add_setting('mmt-contact-info-email');
+  $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'mmt-contact-info-email-control', array(
+    'label' => 'Email',
+    'section' => 'mmt-contact-info-section',
+    'settings' => 'mmt-contact-info-email',
+  )));
+
+  // Address
+  $wp_customize->add_setting('mmt-contact-info-address');
+  $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'mmt-contact-info-address-control', array(
+    'label' => 'Address',
+    'section' => 'mmt-contact-info-section',
+    'settings' => 'mmt-contact-info-address',
+  )));
+}
+add_action('customize_register', 'mmt_contact_info_callout');
+
+
+// // Add Banner callout section to admin appearance customize interface
+// function mmt_banner_callout($wp_customize) {
+//   $wp_customize->add_section('mmt-banner-callout-section', array(
+//     'title' => "Banner Customization"
+//   ));
+
+//   // Headline
+//   $wp_customize->add_setting('mmt-banner-callout-headline', array(
+//     'default' => 'Default Headline',
+//   ));
+//   $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'mmt-banner-callout-headline-control', array( 
+//     'label' => 'Headline',
+//     'section' => 'mmt-banner-callout-section',
+//     'settings' => 'mmt-banner-callout-headline',
+//    ) ) );
+  
+//   // Subheadline
+//   $wp_customize->add_setting('mmt-banner-callout-subheadline', array(
+//     'default' => 'Default Subheadline',
+//   ));
+//   $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'mmt-banner-callout-subheadline-control', array( 
+//     'label' => 'Subheadline',
+//     'section' => 'mmt-banner-callout-section',
+//     'settings' => 'mmt-banner-callout-subheadline',
+//     'type'  => 'textarea',
+//    ) ) );
+
+//   // CTA
+//   $wp_customize->add_setting('mmt-banner-callout-cta', array(
+//     'default' => 'Default CTA',
+//   ));
+//   $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'mmt-banner-callout-cta-control', array( 
+//     'label' => 'CTA',
+//     'section' => 'mmt-banner-callout-section',
+//     'settings' => 'mmt-banner-callout-cta',
+
+//    ) ) );
+
+//   // CTA URL
+//   $wp_customize->add_setting('mmt-banner-callout-cta-url');
+//   $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'mmt-banner-callout-cta-url-control', array( 
+//     'label' => 'CTA Link',
+//     'section' => 'mmt-banner-callout-section',
+//     'settings' => 'mmt-banner-callout-cta-url',
+//     'type' => 'dropdown-pages',
+//    ) ) );
+
+//   // Poster
+//   $wp_customize->add_setting('mmt-banner-callout-poster');
+//   $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'mmt-banner-callout-poster-control', array( 
+//     'label' => 'Poster',
+//     'section' => 'mmt-banner-callout-section',
+//     'settings' => 'mmt-banner-callout-poster',
+//    ) ) );
+
+//   // Video
+//   $wp_customize->add_setting('mmt-banner-callout-vid');
+//   $wp_customize->add_control( new WP_Customize_Media_Control($wp_customize, 'mmt-banner-callout-vid-control', array( 
+//     'label' => 'Video',
+//     'section' => 'mmt-banner-callout-section',
+//     'settings' => 'mmt-banner-callout-vid',
+//    ) ) );
+// }
+// add_action('customize_register', 'mmt_banner_callout');
+
+// remove_theme_mod('mmt_banner_callout');
