@@ -84,14 +84,14 @@ document.addEventListener("DOMContentLoaded", () => {
   );
   generatePageNav.launch();
 
-  class BackToTop {
+  class Scroll {
     constructor(button) {
       this.btt = button;
     }
 
-    launch() {
+    launch(height) {
       if (
-        document.documentElement.clientHeight * 2 <
+        document.documentElement.clientHeight * height <
         document.documentElement.scrollHeight
       ) {
         window.addEventListener("scroll", () => {
@@ -110,6 +110,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  let backToTop = new BackToTop(document.querySelector(".mmt-btt-container"));
-  backToTop.launch();
+  let backToTop = new Scroll(document.querySelector(".mmt-btt-container"));
+  backToTop.launch(2);
+  let contactUsBtn = new Scroll(document.querySelector(".mmt-bav-container"));
+  contactUsBtn.launch(0.5);
 });

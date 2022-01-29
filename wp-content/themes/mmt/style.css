@@ -1014,7 +1014,8 @@ p,
   }
 }
 
-.mmt-btt-container {
+.mmt-btt-container,
+.mmt-bav-container {
   position: fixed;
   bottom: 44px;
   right: 20px;
@@ -1032,25 +1033,9 @@ p,
   color: white;
 }
 
-.mmt-btt-container.visible {
+.mmt-btt-container.visible,
+.mmt-bav-container.visible {
   transform: translateY(0);
   visibility: visible;
   opacity: 1;
-}
-
-.mmt-bav-container {
-  position: fixed;
-  bottom: 44px;
-  left: 20px;
-  height: 40px;
-  width: 40px;
-  background-color: var(--global-red);
-  border-radius: 50%;
-  transition: 0.2s cubic-bezier(0.79, 0.14, 0.15, 0.86);
-  visibility: visible;
-  opacity: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
 }
