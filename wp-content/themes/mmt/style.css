@@ -4,7 +4,7 @@
  Description:  The main theme for MMT Hospitals
  Author:       George Paresishvili
  Author URI:   https://georgeparesishvili.com/
- Version:      1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.7
+ Version:      1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain:  mmt-hospital
@@ -49,7 +49,7 @@ Table of Contents
   --global-white-transparent: rgba(255, 255, 255, 0.5);
   --global-padding: 0 40px;
   --global-content-width: 980px;
-  --global-content-width-logner:1260px;
+  --global-content-width-longer:1260px;
   --global-linear-gradient-horizontal: linear-gradient(
     90deg,
     rgba(235, 29, 37, 0.86) 22.31%,
@@ -274,32 +274,76 @@ textarea {
   word-wrap: normal !important;
 }
 
+.navigation.pagination {
+  width: var(--global-content-width);
+  height: 100px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+
+.page-numbers {
+      display: inline-block;
+      padding: 5px 10px;
+      margin: 0 2px 0 0;
+      border: 1px solid #eee;
+      line-height: 1;
+      text-decoration: none;
+      border-radius: 2px;
+  }
+  .page-numbers.current,
+  a.page-numbers:hover {
+      background: #f9f9f9;
+  }
+  
+
+.cols-one {
+  grid-template-columns: 1fr !important;
+}
+
+.cols-two {
+  grid-template-columns: repeat(2, 1fr) !important;
+}
+
+.cols-three {
+  grid-template-columns: repeat(3, 1fr) !important;
+}
+
 @media screen and (max-width: 1260px) {
   .module-long {
     padding: var(--global-padding) !important;
+  }
+  .cols-two {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .cols-three {
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 }
 
 @media screen and (max-width: 1060px) {
   .module-blog,
   .module-headline,
-  .mmt-news-card-module {
+  .mmt-news-card-module,
+  .navigation.pagination {
     padding: var(--global-padding);
   }
 
   .mmt-news-card-module {
     max-width: unset;
     width: auto;
-    grid-template-columns: 1fr;
   }
 
   .cols-two {
     grid-template-columns: 1fr !important;
   }
+
+  .cols-three {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 @media screen and (max-width: 980px) {
-
 }
 
 /* 4.0.0 Header */
@@ -345,7 +389,10 @@ textarea {
 }
 
 @media screen and (max-width: 760px) {
-  .header-cntnt-basic {
+  .header-cntnt-basic-container {
+    justify-content: flex-end;
+  }
+  .header-cntnt-basic-address {
     display: none;
   }
 }
@@ -563,7 +610,7 @@ body.open .mmt-ham_btn::before {
 
 @media screen and (max-width: 760px) {
   .mmt-hero-banner-headline {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   /* .mmt-hero-banner-overlay {
@@ -574,7 +621,10 @@ body.open .mmt-ham_btn::before {
 /* Headline Module */
 
 .module-headline {
-  margin: 0 auto;
+  margin: 40px auto;
+}
+.module-headline h2 {
+  font-size: 2rem;
 }
 
 /* Video Module */
@@ -641,6 +691,9 @@ body.open .mmt-ham_btn::before {
 @media screen and (max-width: 760px) {
   .module-vid .mmt-hero-headline-container h2 {
     font-size: 1.1rem;
+  }
+  .module-vid .mmt-hero-headline-button {
+    font-size: 0.8rem;
   }
 }
 
@@ -779,7 +832,7 @@ input[type="submit"]:hover {
 .mmt-news-card-module.cols-one {
   grid-template-columns: repeat(1, 1fr);
 }
-.mmt-news-card-module.cols-two {
+.mmt-news-card-module.cols-three {
   grid-template-columns: repeat(3, 1fr);
 }
 
@@ -815,13 +868,6 @@ input[type="submit"]:hover {
 .mmt-news-card-text p {
   font-size: 14px;
   color: var(--global-black);
-}
-
-@media screen and (max-width: 1260px) {
-
-  .mmt-news-card-module.cols-two {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 @media screen and (max-width: 1060px) {
@@ -1019,8 +1065,8 @@ p,
   position: fixed;
   bottom: 44px;
   right: 20px;
-  height: 40px;
-  width: 40px;
+  height: 60px;
+  width: 60px;
   background-color: var(--global-red);
   border-radius: 50%;
   transition: 0.2s cubic-bezier(0.79, 0.14, 0.15, 0.86);
@@ -1033,9 +1079,33 @@ p,
   color: white;
 }
 
+.mmt-bav-container {
+  left: 20px;
+}
+
 .mmt-btt-container.visible,
 .mmt-bav-container.visible {
   transform: translateY(0);
   visibility: visible;
   opacity: 1;
+}
+
+.mmt-btt-container .dashicons,
+.mmt-bav-container .dashicons {
+  width: unset;
+  height: unset;
+  font-size: 30px;
+}
+
+@media screen and (max-width: 760px) {
+  .mmt-btt-container,
+  .mmt-bav-container {
+    height: 40px;
+    width: 40px;
+  }
+
+  .mmt-btt-container .dashicons,
+  .mmt-bav-container .dashicons {
+    font-size: 20px;
+  }
 }

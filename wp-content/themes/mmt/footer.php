@@ -1,6 +1,6 @@
-<a href="#" class="mmt-btt-container">
+<div href="#" class="mmt-btt-container">
   <span class="dashicons dashicons-arrow-up-alt"></span>
-</a>
+</div>
 <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'book a visit' ) ) ); ?>" class="mmt-bav-container">
   <span class="dashicons dashicons-email-alt"></span>
 </a>
@@ -36,5 +36,4 @@
 <div class="developedBy" id="developedBy" style="width:100%;text-align:center;font-family:'montserrat';font-size:10px;background-color:#0E0E10;color:#fff;padding:10px 0;">Designed and developed by <a href="https://georgeparesishvili.com/" style="color:#fff"><b>George&nbsp;Paresishvili</b></a></div>
 <?php wp_footer(); ?>
 </body>
-
 </html>

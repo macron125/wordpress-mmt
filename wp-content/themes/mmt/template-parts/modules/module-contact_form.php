@@ -7,33 +7,33 @@
     <fieldset class="mmt-contact_us-fieldset">
 
       <div>
-        <label for="firstname">First Name (required)</label>
-        <input class="mmt-field-short" type="text" name="firstname" id="firstname" placeholder="First Name" value="" required>
+        <label for="firstname"><?php echo pll__('First Name') . " " . pll__('Required') ?></label>
+        <input class="mmt-field-short" type="text" name="firstname" id="firstname" placeholder="<?php echo pll__('First Name') ?>" value="" required>
       </div>
 
       <div>
-        <label for="lastname">Last Name (required)</label>
-        <input class="mmt-field-short" type="text" name="lastname" id="lastname" placeholder="Last Name" value="" required>
+        <label for="lastname"><?php echo pll__('Last Name') . " " . pll__('Required') ?></label>
+        <input class="mmt-field-short" type="text" name="lastname" id="lastname" placeholder="<?php echo pll__('Last Name') ?>" value="" required>
       </div>
     
     </fieldset>
 
     <div>
-      <label for="phone">Phone (required)</label>
-      <input class="mmt-field-long" type="tel" name="phone" id="phone" placeholder="Phone (numbers only)" pattern="[0-9 ]+" title="Use spaces and numbers only" value="" required>
+      <label for="phone"><?php echo pll__('Phone') . " " . pll__('Required') ?></label>
+      <input class="mmt-field-long" type="tel" name="phone" id="phone" placeholder="<?php echo pll__('Phone') ?>" pattern="[0-9 ]+" title="Use spaces and numbers only" value="" required>
     </div>
     
     <div>
-      <label for="email">E-mail</label>
-      <input class="mmt-field-long" type="text" name="email" id="email" placeholder="E-mail" value="">
+      <label for="email"><?php echo pll__('Email') . " " . pll__('Required') ?></label>
+      <input class="mmt-field-long" type="text" name="email" id="email" placeholder="<?php echo pll__('email') ?>" value="">
     </div>
     
     <div>
-      <label for="message">Message (required)</label>
-      <textarea class="mmt-field-long" name="message" id="message" cols="30" rows="10" placeholder="Message" value="" required></textarea>
+      <label for="message"><?php echo pll__('Message') . " " . pll__('Required') ?></label>
+      <textarea class="mmt-field-long" name="message" id="message" cols="30" rows="10" placeholder="<?php echo pll__('Message') ?>" value="" required></textarea>
     </div>
 
-    <input type="submit" name="submit" value="Submit">
+    <input type="submit" name="submit" value="<?php echo pll__('Submit'); ?>">
 
   </form>
 

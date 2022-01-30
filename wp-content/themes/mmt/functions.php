@@ -37,7 +37,7 @@ add_action('wp_enqueue_scripts', 'mmt_register_styles');
  * Register scripts
  */
 function mmt_register_scripts() {
-  $version = '1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1';
+  $version = '1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.3';
   wp_enqueue_script('mmt-script', get_template_directory_uri() . '/assets/js/main.js', array(), $version, true);
 }
 add_action('wp_enqueue_scripts', 'mmt_register_scripts');
@@ -73,6 +73,42 @@ function mmt_excerpt_length( $legnth ) {
 }
 add_filter( 'excerpt_length', 'mmt_excerpt_length', 999 );
 
+// Function for calling latest post from each category 
+
+function mmt_latest_post_cat() {
+  $mmt_news = new WP_Query;
+  $mmt_news_cats = get_categories();
+
+  foreach( $mmt_news_cats as $news_cat ) {
+
+    $args = [
+      'cat' => $news_cat->term_id,
+      'posts_per_page' => 1,
+      'no_found_rows' => true,
+      'ignore_sticky_posts' => true,
+    ];
+
+    $mmt_news->query($args);
+
+    if( $mmt_news->have_posts() ) {
+      while( $mmt_news->have_posts() ) {
+
+        $mmt_news->the_post();
+
+        $card_args = [
+          'cat_name' => $news_cat->name,
+          'cat_permalink' => get_category_link($args['cat']),
+          'post_title' => get_the_title(),
+          'post_permalink' => get_permalink(),
+          'post_excerpt' => get_the_excerpt(),
+        ];
+
+        get_template_part( 'template-parts/modules/module', 'card', $card_args );
+      }
+    } 
+  }
+}
+
 // Add Contact Info callout section to admin appearance customize interface
 function mmt_contact_info_callout($wp_customize) {
   $wp_customize->add_section('mmt-contact-info-section', array(
@@ -104,6 +140,46 @@ function mmt_contact_info_callout($wp_customize) {
   )));
 }
 add_action('customize_register', 'mmt_contact_info_callout');
+
+
+// Register Polylang Strings 
+function register_polylang_strings() {
+  $args = [
+    'Headlines' => [
+      'title-news_releases' => 'News Releases',
+      'title-news_featured' => 'Featured News',
+    ],
+    'Contact Form' => [
+      'contact_form-firstname' => 'First Name',
+      'contact_form-lastname' => 'Last Name',
+      'contact_form-phone' => 'Phone',
+      'contact_form-email' => 'Email',
+      'contact_form-message' => 'Message',
+      'contact_form-submit' => 'Submit',
+      'contact_form-required' => 'Required',
+    ]
+  ];
+
+  foreach($args as $group => $arr) {
+    foreach($arr as $name => $string) {
+      pll_register_string($name, $string, $group);
+    }
+  }
+}
+
+register_polylang_strings();
+
+// pll_register_string( 'title-news_releases', 'News Releases', 'Headlines' );
+// pll_register_string( 'title-news_featured', 'Featured News', 'Headlines' );
+
+
+// pll_register_string( 'contact_form-firstname', 'First Name', 'Contact Form' );
+// pll_register_string( 'contact_form-lastname', 'Last Name', 'Contact Form' );
+// pll_register_string( 'contact_form-phone', 'Phone', 'Contact Form' );
+// pll_register_string( 'contact_form-email', 'Email', 'Contact Form' );
+// pll_register_string( 'contact_form-message', 'Message', 'Contact Form' );
+// pll_register_string( 'contact_form-submit', 'Submit', 'Contact Form' );
+// pll_register_string( 'contact_form-required', 'Required', 'Contact Form' );
 
 
 // // Add Banner callout section to admin appearance customize interface

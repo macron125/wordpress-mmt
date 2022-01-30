@@ -1,10 +1,6 @@
 <?php 
 
-if( is_home() ) {
-  $news_page_id = get_option( 'page_for_posts' );
-}
-
-$title_simple;
+$news_page_id = get_option( 'page_for_posts' );
 
 if(single_term_title('', false)) {
   $title_simple = single_term_title('', false);
@@ -27,29 +23,29 @@ if(single_term_title('', false)) {
 // $vid_poster = wp_get_attachment_url(get_theme_mod('mmt-banner-callout-poster'));
 // $vid_vid = wp_get_attachment_url(get_theme_mod('mmt-banner-callout-vid'));
 
+// 
 ?>
 
-<?php if( get_post_custom_values('hero_image') ) : ?>
+<?php if( is_home() || get_post_custom_values('hero_image') ) : ?>
 <section class="module module-hero mmt-hero-banner">
   <div class="mmt-hero-banner-img-container">
     <div class="mmt-hero-banner-overlay"></div>
     <img class="mmt-hero-banner-img" src="
-      <?php 
-      echo esc_url( get_post_custom_values( 'hero_image', is_home() ? $news_page_id : '' )[0] ); ?>" alt="">
+      <?php echo esc_url( get_post_custom_values( 'hero_image', is_home() ? $news_page_id : '' )[0] ); ?>" alt="">
   </div>
   <div class="mmt-hero-headline-container">
-    <h1 class="mmt-hero-banner-headline"><?php  echo $title_simple; ?></h1>
+    <h1 class="mmt-hero-banner-headline"><?php echo $title_simple; ?></h1>
   </div>
 </section>
 <?php elseif(get_post_custom_values('hero_video')) : ?>
 
   <?php
-  $vid_headline = get_post_custom_values ( 'hero_video_headline' )[0];
-  $vid_subheadline = get_post_custom_values ( 'hero_video_subheadline' )[0];
-  $vid_cta = get_post_custom_values ( 'hero_video_cta' )[0];
-  $vid_cta_url = get_page_by_title( 'Book a Visit' );
-  $vid_poster = esc_url( get_post_custom_values( 'hero_video_poster', is_home() ? $news_page_id : '' )[0] );
-  $vid_vid = esc_url( get_post_custom_values( 'hero_video', is_home() ? $news_page_id : '' )[0] );
+  $vid_headline       = get_post_custom_values ( 'hero_video_headline' )[0];
+  $vid_subheadline    = get_post_custom_values ( 'hero_video_subheadline' )[0];
+  $vid_cta            = get_post_custom_values ( 'hero_video_cta' )[0];
+  $vid_cta_url        = get_page_by_title( 'Book a Visit' );
+  $vid_poster         = esc_url( get_post_custom_values( 'hero_video_poster', is_home() ? $news_page_id : '' )[0] );
+  $vid_vid            = esc_url( get_post_custom_values( 'hero_video', is_home() ? $news_page_id : '' )[0] );
   ?>
 
 <section class="module module-hero module-vid">

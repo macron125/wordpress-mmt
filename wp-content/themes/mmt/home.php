@@ -6,9 +6,17 @@ echo '<main class="mmt-blog">';
 
 if ( is_home() ) {
 
+  $news_page_id = get_option( 'page_for_posts' );
+
   get_template_part( 'template-parts/modules/module', 'banner' );
 
-  get_template_part( 'template-parts/modules/module', 'headline', ['headline' => 'News Releases', 'width' => 'short']);
+  get_template_part( 
+    'template-parts/modules/module', 'headline', 
+    [
+      'headline' => function_exists('PLL') ? pll__('News Releases') : "News Releases", 
+      'width' => 'short'
+    ]
+  );
 
   echo '<section class="module mmt-news-card-module mmt-news-list cols-one">';
 
@@ -23,7 +31,6 @@ if ( is_home() ) {
   echo '</section>';
 
 }
-
 
 the_posts_pagination(
   [
