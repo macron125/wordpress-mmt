@@ -89,29 +89,34 @@ document.addEventListener("DOMContentLoaded", () => {
       this.btt = button;
     }
 
-    launch(height) {
+    launch(height, bool) {
       if (
         document.documentElement.clientHeight * height <
         document.documentElement.scrollHeight
       ) {
         window.addEventListener("scroll", () => {
-          window.scrollY >= document.documentElement.clientHeight * 2
+          window.scrollY >= document.documentElement.clientHeight * height
             ? this.btt.classList.add("visible")
             : this.btt.classList.remove("visible");
         });
       }
+      this.scrollToTop(bool);
+    }
 
-      this.btt.addEventListener("click", () => {
-        window.scrollTo({ 
-          top: 0, 
-          behavior: "smooth" 
+    scrollToTop(bool) {
+      if(bool) {
+        this.btt.addEventListener("click", () => {
+          window.scrollTo({ 
+            top: 0, 
+            behavior: "smooth" 
+          });
         });
-      });
+      }
     }
   }
 
   let backToTop = new Scroll(document.querySelector(".mmt-btt-container"));
-  backToTop.launch(2);
+  backToTop.launch(2, true);
   let contactUsBtn = new Scroll(document.querySelector(".mmt-bav-container"));
-  contactUsBtn.launch(0.5);
+  contactUsBtn.launch(0.5, false);
 });
