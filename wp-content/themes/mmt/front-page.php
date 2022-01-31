@@ -12,7 +12,7 @@ if( is_front_page() ) {
   get_template_part( 
     'template-parts/modules/module', 'headline', 
     [
-      'headline' => function_exists('PLL') ? pll__('News Releases') : 'News Releases', 
+      'headline' => function_exists('PLL') ? pll__('Featured News') : 'Featured News', 
       'width' => 'long'
     ]
   );

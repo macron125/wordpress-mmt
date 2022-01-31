@@ -43,7 +43,7 @@ get_template_part(
   'template-parts/modules/module', 
   'headline', 
   [
-    'headline' => function_exists('PLL') ? pll__('Featured News') . ' - ' . single_cat_title('', false) : single_cat_title('', false) , 
+    'headline' => function_exists('PLL') ? pll__('Featured News') : "Featured News", 
     'width' => 'short'
   ]
 );
