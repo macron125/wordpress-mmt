@@ -4,7 +4,7 @@
  Description:  The main theme for MMT Hospitals
  Author:       George Paresishvili
  Author URI:   https://georgeparesishvili.com/
- Version:      1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1
+ Version:      1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.2
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain:  mmt-hospital
@@ -870,9 +870,22 @@ input[type="submit"]:hover {
   color: var(--global-black);
 }
 
+.mmt-article-card-img {
+  float:left; 
+  width:300px; 
+  height:200px; 
+  object-fit:cover; 
+  padding:10px;
+}
+
 @media screen and (max-width: 1060px) {
   .mmt-news-card {
     min-width: unset;
+  }
+
+  .mmt-article-card-img {
+    float: none;
+    width: 100%;
   }
 }
 
