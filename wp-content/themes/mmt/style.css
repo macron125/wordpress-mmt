@@ -836,6 +836,10 @@ input[type="submit"]:hover {
   grid-template-columns: repeat(3, 1fr);
 }
 
+.mmt-news-list.cols-one .mmt-news-card:last-child {
+  border: none !important;
+}
+
 .mmt-news-card {
   min-height: 150px;
   min-width: 350px;
@@ -875,7 +879,7 @@ input[type="submit"]:hover {
   width:300px; 
   height:200px; 
   object-fit:cover; 
-  padding:10px;
+  padding: 10px 10px 10px 0;
 }
 
 @media screen and (max-width: 1060px) {

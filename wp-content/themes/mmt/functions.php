@@ -37,7 +37,7 @@ add_action('wp_enqueue_scripts', 'mmt_register_styles');
  * Register scripts
  */
 function mmt_register_scripts() {
-  $version = '1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.3';
+  $version = '1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.4';
   wp_enqueue_script('mmt-script', get_template_directory_uri() . '/assets/js/main.js', array(), $version, true);
 }
 add_action('wp_enqueue_scripts', 'mmt_register_scripts');
@@ -169,18 +169,16 @@ function register_polylang_strings() {
 
 register_polylang_strings();
 
-// pll_register_string( 'title-news_releases', 'News Releases', 'Headlines' );
-// pll_register_string( 'title-news_featured', 'Featured News', 'Headlines' );
+// Check contact us page for both languages
 
-
-// pll_register_string( 'contact_form-firstname', 'First Name', 'Contact Form' );
-// pll_register_string( 'contact_form-lastname', 'Last Name', 'Contact Form' );
-// pll_register_string( 'contact_form-phone', 'Phone', 'Contact Form' );
-// pll_register_string( 'contact_form-email', 'Email', 'Contact Form' );
-// pll_register_string( 'contact_form-message', 'Message', 'Contact Form' );
-// pll_register_string( 'contact_form-submit', 'Submit', 'Contact Form' );
-// pll_register_string( 'contact_form-required', 'Required', 'Contact Form' );
-
+// function check_contact_page() {
+//   $contact_page = get_page_by_path('book-a-visit');
+//   $contact_page_EN = $contact_page->ID;
+//   if( function_exists( 'PLL' ) ) {
+//      $contact_page_RU = pll_get_post_translations( $contact_page_EN )['ru'];
+//   }
+// }
+// add_action('plugins_loaded', 'check_contact_page')
 
 // // Add Banner callout section to admin appearance customize interface
 // function mmt_banner_callout($wp_customize) {

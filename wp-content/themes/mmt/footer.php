@@ -12,7 +12,6 @@
           
           wp_nav_menu(
             [
-              // 'container_class'       => '',
               'menu_class'            => 'mmt-footer-sitemap-list-item',
               'theme_location'        => 'footermenu',
               'depth'                 => '1',
