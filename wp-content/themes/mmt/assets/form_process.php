@@ -6,7 +6,7 @@ if(isset($_POST["submit"])) {
   $phone = $_POST["phone"];
   $email = $_POST["email"];
 
-  $mailto = "g.paresishvili@outlook.com";
+  $mailto = "info@urologycenter.global";
   $subject = "MMT Hospital Form - " . $firstname . " " . $lastname;
 
   $message = "First name: " . $firstname . "\r\n";
