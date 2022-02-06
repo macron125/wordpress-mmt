@@ -22,7 +22,7 @@
           ?>
     </nav>
     <div class="mmt-footer-contact-container">
-      <img class="mmt-footer-logo"
+      <img class="mmt-footer-logo" loading="lazy"
         src="<?php echo esc_url( wp_get_attachment_url( get_theme_mod( 'custom_logo' ) ) ); ?>" alt="MMT Hospital Logo">
       <address class="mmt-footer-contact">
         <a class="mmt-phone" href="tel:<?php echo get_theme_mod('mmt-contact-info-phone'); ?>"><?php echo get_theme_mod('mmt-contact-info-phone'); ?></a>

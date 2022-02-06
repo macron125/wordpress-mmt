@@ -38,7 +38,7 @@
 
         <div class="mmt-gn-logo-container">
           <a href="<?php echo esc_url( get_home_url() ); ?>">
-            <img class="mmt-gn-logo"
+            <img class="mmt-gn-logo" loading="lazy"
               src="<?php echo esc_url( wp_get_attachment_url( get_theme_mod( 'custom_logo' ) ) ); ?>"
               alt="MMT Hospital Logo" />
           </a>

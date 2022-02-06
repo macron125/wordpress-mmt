@@ -1081,7 +1081,7 @@ p,
 .mmt-bav-container {
   position: fixed;
   bottom: 44px;
-  right: 20px;
+  left: 24px;
   height: 60px;
   width: 60px;
   background-color: var(--global-red);
@@ -1096,8 +1096,8 @@ p,
   color: white;
 }
 
-.mmt-bav-container {
-  left: 20px;
+.mmt-btt-container {
+  bottom: 114px;
 }
 
 .mmt-btt-container.visible,
@@ -1113,7 +1113,7 @@ p,
   height: unset;
   font-size: 30px;
 }
-
+/* 
 @media screen and (max-width: 760px) {
   .mmt-btt-container,
   .mmt-bav-container {
@@ -1125,4 +1125,4 @@ p,
   .mmt-bav-container .dashicons {
     font-size: 20px;
   }
-}
+} */

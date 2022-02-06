@@ -30,7 +30,7 @@ if(single_term_title('', false)) {
 <section class="module module-hero mmt-hero-banner">
   <div class="mmt-hero-banner-img-container">
     <div class="mmt-hero-banner-overlay"></div>
-    <img class="mmt-hero-banner-img" src="
+    <img class="mmt-hero-banner-img" loading="lazy" src="
       <?php echo esc_url( get_post_custom_values( 'hero_image', is_home() ? $news_page_id : '' )[0] ); ?>" alt="">
   </div>
   <div class="mmt-hero-headline-container">

@@ -15,7 +15,7 @@
 <?php else : ?>
 <article class="mmt-news-card border-bot" id="aid-<?php the_ID(); ?>">
   <?php if(get_post_custom_values('hero_image')) : ?> 
-    <img class="mmt-article-card-img" src="<?php echo get_post_custom_values('hero_image')[0]; ?>" alt="">
+    <img class="mmt-article-card-img" loading="lazy" src="<?php echo get_post_custom_values('hero_image')[0]; ?>" alt="">
   <?php endif; ?>
   <ul class="mmt-article-data noborder">
     <li class="mmt-article-data-date"><?php echo get_the_date(); ?></li>
