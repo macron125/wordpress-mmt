@@ -76,22 +76,18 @@ if(single_term_title('', false)) {
 
 <?php 
 
-$contact_page = get_page_by_path('book-a-visit');
 $who_we_are_page = get_page_by_path('who-we-are');
 $what_we_do_page = get_page_by_path('what-we-do');
 
-$contact_page_id_EN = $contact_page->ID;
 $who_we_are_id_EN = $who_we_are_page->ID;
 $what_we_do_id_EN = $what_we_do_page->ID;
 
 
 if(function_exists('PLL')) :
-  $contact_page_id_RU = pll_get_post_translations( $contact_page_id_EN )['ru'];
   $who_we_are_id_RU = pll_get_post_translations( $who_we_are_id_EN )['ru'];
   $what_we_do_id_RU = pll_get_post_translations( $what_we_do_id_EN )['ru'];
 
   if( 
-    is_page($contact_page_id_EN) || is_page($contact_page_id_RU) ||    
     is_page($who_we_are_id_EN) || is_page($who_we_are_id_RU) ||    
     is_page($what_we_do_id_EN) || is_page($what_we_do_id_RU)    
   ) :
