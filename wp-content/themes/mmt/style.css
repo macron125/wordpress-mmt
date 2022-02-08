@@ -644,11 +644,16 @@ body.open .mmt-ham_btn::before {
 
 /* Video Module */
 
-.module-vid video {
+.module-vid video,
+.module-vid img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   vertical-align: top;
+}
+
+.module-vid img {
+  display: none;
 }
 
 .module-vid .mmt-hero-banner-overlay {
@@ -709,6 +714,14 @@ body.open .mmt-ham_btn::before {
   }
   .module-vid .mmt-hero-headline-button {
     font-size: 0.8rem;
+  }
+
+  .module-vid video {
+    display: none;
+  }
+
+  .module-vid img {
+    display: block;
   }
 }
 
@@ -989,6 +1002,7 @@ p,
   width: 100%;
   min-height: 350px;
   background-color: var(--global-footer-background);
+  margin-top: 100px;
 }
 
 .mmt-footer-wrapper {

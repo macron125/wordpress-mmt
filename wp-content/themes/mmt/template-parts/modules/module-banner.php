@@ -54,6 +54,7 @@ if(single_term_title('', false)) {
     <source src="<?php echo $vid_vid; ?>" type="video/mp4">
     Sorry, your browser doesn't support embedded videos.
   </video>
+  <img class="mmt-hero-banner-poster" src="<?php echo $vid_poster ?>" alt="" hidden>
   <div class="mmt-hero-banner-overlay"></div>
   <div class="mmt-hero-headline-container module-long">
     <h1 class="mmt-hero-banner-headline"><?php echo $vid_headline; ?></h1>
