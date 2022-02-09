@@ -452,7 +452,7 @@ textarea {
 }
 
 .mmt-gn-list-item a {
-  color: rgb(0, 0, 0, 0.37);
+  color: rgb(0, 0, 0, 0.8);
   transition: 0.1s ease-in-out;
 }
 
@@ -862,6 +862,10 @@ input[type="submit"]:hover {
 }
 .mmt-news-card-module.cols-three {
   grid-template-columns: repeat(3, 1fr);
+}
+
+.mmt-news-featured {
+  margin-bottom: 100px;
 }
 
 .mmt-news-list.cols-one .mmt-news-card:last-child {

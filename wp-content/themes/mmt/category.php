@@ -48,7 +48,7 @@ get_template_part(
   ]
 );
 
-echo '<section class="module module-short mmt-news-card-module cols-two">';
+echo '<section class="module module-short mmt-news-card-module mmt-news-featured cols-two">';
 
 mmt_latest_post_cat();
 

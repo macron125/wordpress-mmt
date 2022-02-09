@@ -17,7 +17,7 @@ if( is_front_page() ) {
     ]
   );
 
-  echo '<section class="module module-long mmt-news-card-module cols-three">';
+  echo '<section class="module module-long mmt-news-card-module mmt-news-featured cols-three">';
 
   // Get featured posts
 
