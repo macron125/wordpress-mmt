@@ -151,25 +151,27 @@ add_action('customize_register', 'mmt_contact_info_callout');
 
 // Register Polylang Strings 
 function register_polylang_strings() {
-  $args = [
-    'Headlines' => [
-      'title-news_releases' => 'News Releases',
-      'title-news_featured' => 'Featured News',
-    ],
-    'Contact Form' => [
-      'contact_form-firstname' => 'First Name',
-      'contact_form-lastname' => 'Last Name',
-      'contact_form-phone' => 'Phone',
-      'contact_form-email' => 'Email',
-      'contact_form-message' => 'Message',
-      'contact_form-submit' => 'Submit',
-      'contact_form-required' => 'Required',
-    ]
-  ];
-
-  foreach($args as $group => $arr) {
-    foreach($arr as $name => $string) {
-      pll_register_string($name, $string, $group);
+  if(function_exists("PLL")) {
+    $args = [
+      'Headlines' => [
+        'title-news_releases' => 'News Releases',
+        'title-news_featured' => 'Featured News',
+      ],
+      'Contact Form' => [
+        'contact_form-firstname' => 'First Name',
+        'contact_form-lastname' => 'Last Name',
+        'contact_form-phone' => 'Phone',
+        'contact_form-email' => 'Email',
+        'contact_form-message' => 'Message',
+        'contact_form-submit' => 'Submit',
+        'contact_form-required' => 'Required',
+      ]
+    ];
+  
+    foreach($args as $group => $arr) {
+      foreach($arr as $name => $string) {
+        pll_register_string($name, $string, $group);
+      }
     }
   }
 }
