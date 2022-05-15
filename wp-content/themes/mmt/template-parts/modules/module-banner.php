@@ -7,23 +7,6 @@ if(single_term_title('', false)) {
 } else {
   $title_simple = single_post_title('', false);
 }
-
-// if( get_theme_mod('mmt_banner_callout_setting') ) {
-//   $title = get_theme_mod('mmt_banner_callout_headline'); 
-// } elseif ( single_term_title('', false) != "" ) {
-//   $title = single_term_title('', false);
-// } else {
-//   $title = single_post_title('', false);
-// }
-
-// $vid_headline = get_theme_mod('mmt-banner-callout-headline');
-// $vid_subheadline = get_theme_mod('mmt-banner-callout-subheadline');
-// $vid_cta = get_theme_mod('mmt-banner-callout-cta');
-// $vid_cta_url = get_theme_mod('mmt-banner-callout-cta-url');
-// $vid_poster = wp_get_attachment_url(get_theme_mod('mmt-banner-callout-poster'));
-// $vid_vid = wp_get_attachment_url(get_theme_mod('mmt-banner-callout-vid'));
-
-// 
 ?>
 
 <?php if( is_home() || get_post_custom_values('hero_image') ) : ?>
@@ -78,7 +61,7 @@ if(single_term_title('', false)) {
 <?php 
 
 $who_we_are_page = get_page_by_path('who-we-are');
-$what_we_do_page = get_page_by_path('what-we-do');
+$what_we_do_page = get_page_by_path('our-services');
 
 $who_we_are_id_EN = $who_we_are_page->ID;
 $what_we_do_id_EN = $what_we_do_page->ID;
@@ -91,9 +74,7 @@ if(function_exists('PLL')) :
   if( 
     is_page($who_we_are_id_EN) || is_page($who_we_are_id_RU) ||    
     is_page($what_we_do_id_EN) || is_page($what_we_do_id_RU)    
-  ) :
-  
-  ?>
+  ) : ?>
   <nav class="mmt-page-nav">
     <ul class="mmt-page-nav-list">
       <?php // Menu goes here main.js ?>
