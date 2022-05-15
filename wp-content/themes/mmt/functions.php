@@ -7,12 +7,11 @@
 
 /**
  * Add dynamic title support
+ * Add logo support
+ * Add thumbnail supoprt
  */
 add_theme_support('title-tag');
-
-/**
- * Add logo support
- */
+add_theme_support( 'post-thumbnails' );
 add_theme_support( 'custom-logo', [] );
 
 /**
@@ -29,7 +28,7 @@ function smartwp_remove_wp_block_library_css(){
   wp_dequeue_style( 'wp-block-library' );
   wp_dequeue_style( 'wp-block-library-theme' );
 } 
-add_action( 'wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css', 100 );
+// add_action( 'wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css', 100 );
 
 /**
  * Register styles
@@ -50,9 +49,15 @@ function mmt_register_scripts() {
 add_action('wp_enqueue_scripts', 'mmt_register_scripts');
 
 /**
+ * Custom Post Types
+ */
+
+require get_template_directory() . "/core/custom-post-types.php";
+
+/**
  * Disable Gutenberg
  */
-add_filter('use_block_editor_for_post', '__return_false', 10);
+// add_filter('use_block_editor_for_post', '__return_false', 10);
 
 /**
  * Register navigation manus
@@ -148,6 +153,18 @@ function mmt_contact_info_callout($wp_customize) {
 }
 add_action('customize_register', 'mmt_contact_info_callout');
 
+function mmt_patient_stories_callout($wp_customize) {
+  $wp_customize->add_section('mmt-patient-stories-archive-section', array(
+    'title' => 'Patient Stories Archive',
+  ));
+  $wp_customize->add_setting('mmt-patient-stories-banner', [ 'type' => 'theme_mod', ] );
+  $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'mmt-patient-stories-banner-control', array(
+    'label' => 'Banner',
+    'section' => 'mmt-patient-stories-archive-section',
+    'settings' => 'mmt-patient-stories-banner',
+  )));
+}
+add_action('customize_register', 'mmt_patient_stories_callout');
 
 // Register Polylang Strings 
 function register_polylang_strings() {
@@ -156,6 +173,7 @@ function register_polylang_strings() {
       'Headlines' => [
         'title-news_releases' => 'News Releases',
         'title-news_featured' => 'Featured News',
+        'title-patient_stories' => 'Patient Stories',
       ],
       'Contact Form' => [
         'contact_form-firstname' => 'First Name',
@@ -177,81 +195,3 @@ function register_polylang_strings() {
 }
 
 register_polylang_strings();
-
-// Check contact us page for both languages
-
-// function check_contact_page() {
-//   $contact_page = get_page_by_path('book-a-visit');
-//   $contact_page_EN = $contact_page->ID;
-//   if( function_exists( 'PLL' ) ) {
-//      $contact_page_RU = pll_get_post_translations( $contact_page_EN )['ru'];
-//   }
-// }
-// add_action('plugins_loaded', 'check_contact_page')
-
-// // Add Banner callout section to admin appearance customize interface
-// function mmt_banner_callout($wp_customize) {
-//   $wp_customize->add_section('mmt-banner-callout-section', array(
-//     'title' => "Banner Customization"
-//   ));
-
-//   // Headline
-//   $wp_customize->add_setting('mmt-banner-callout-headline', array(
-//     'default' => 'Default Headline',
-//   ));
-//   $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'mmt-banner-callout-headline-control', array( 
-//     'label' => 'Headline',
-//     'section' => 'mmt-banner-callout-section',
-//     'settings' => 'mmt-banner-callout-headline',
-//    ) ) );
-  
-//   // Subheadline
-//   $wp_customize->add_setting('mmt-banner-callout-subheadline', array(
-//     'default' => 'Default Subheadline',
-//   ));
-//   $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'mmt-banner-callout-subheadline-control', array( 
-//     'label' => 'Subheadline',
-//     'section' => 'mmt-banner-callout-section',
-//     'settings' => 'mmt-banner-callout-subheadline',
-//     'type'  => 'textarea',
-//    ) ) );
-
-//   // CTA
-//   $wp_customize->add_setting('mmt-banner-callout-cta', array(
-//     'default' => 'Default CTA',
-//   ));
-//   $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'mmt-banner-callout-cta-control', array( 
-//     'label' => 'CTA',
-//     'section' => 'mmt-banner-callout-section',
-//     'settings' => 'mmt-banner-callout-cta',
-
-//    ) ) );
-
-//   // CTA URL
-//   $wp_customize->add_setting('mmt-banner-callout-cta-url');
-//   $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'mmt-banner-callout-cta-url-control', array( 
-//     'label' => 'CTA Link',
-//     'section' => 'mmt-banner-callout-section',
-//     'settings' => 'mmt-banner-callout-cta-url',
-//     'type' => 'dropdown-pages',
-//    ) ) );
-
-//   // Poster
-//   $wp_customize->add_setting('mmt-banner-callout-poster');
-//   $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'mmt-banner-callout-poster-control', array( 
-//     'label' => 'Poster',
-//     'section' => 'mmt-banner-callout-section',
-//     'settings' => 'mmt-banner-callout-poster',
-//    ) ) );
-
-//   // Video
-//   $wp_customize->add_setting('mmt-banner-callout-vid');
-//   $wp_customize->add_control( new WP_Customize_Media_Control($wp_customize, 'mmt-banner-callout-vid-control', array( 
-//     'label' => 'Video',
-//     'section' => 'mmt-banner-callout-section',
-//     'settings' => 'mmt-banner-callout-vid',
-//    ) ) );
-// }
-// add_action('customize_register', 'mmt_banner_callout');
-
-// remove_theme_mod('mmt_banner_callout');
